@@ -19,5 +19,4 @@ class ChirpPolicy
     {
         return $this->update($user, $chirp);
     }
-
 }
