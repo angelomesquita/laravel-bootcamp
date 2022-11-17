@@ -2,14 +2,13 @@
 
 namespace Tests\Unit\Policies;
 
-use App\Models\Chirp;
-use App\Models\User;
 use App\Policies\ChirpPolicy;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Tests\TestCase;
+use Tests\{Factories, TestCase};
 
 class ChirpPolicyTest extends TestCase
 {
+    use Factories;
     use RefreshDatabase;
 
     private $policy;
@@ -48,15 +47,5 @@ class ChirpPolicyTest extends TestCase
     {
         $anotherUser = $this->anotherUser;
         $this->assertFalse($this->policy->delete($anotherUser, $this->chirp));
-    }
-
-    private function getUser(): User
-    {
-        return User::factory()->create();
-    }
-
-    private function getChirp(User $user): Chirp
-    {
-        return Chirp::factory()->create(['user_id' => $user->id]);
     }
 }

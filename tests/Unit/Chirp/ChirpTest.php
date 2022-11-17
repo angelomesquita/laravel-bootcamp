@@ -2,8 +2,7 @@
 
 namespace Tests\Unit\Chirp;
 
-use App\Models\Chirp;
-use App\Models\User;
+use App\Models\{Chirp, User};
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Tests\TestCase;
 
